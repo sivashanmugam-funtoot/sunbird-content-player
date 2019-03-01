@@ -404,16 +404,22 @@ var qspatch = {
         }
         
     },
-   validateUrl: function(url){
+    validateUrl: function(url){
         var regex = new RegExp("^(http|https)://", "i");
         if(regex.test(url)){
-             var validString = url.split("://")[1].replace("//", "/");
-             return [url.split("://")[0], validString].join("://");
-             
+            var tempUrl = url.split("://")
+            if (tempUrl.length > 1){
+                var validString = tempUrl[1].split("//").join("/");
+                return [tempUrl[0], validString].join("://");
+            }             
         }else{
-            var validString = url.split(":///")[1].replace("//", "/");
-             return [url.split("://")[0], validString].join(":///");
-         } 
+            var tempUrl = url.split(":///")
+            if (tempUrl.length > 1){
+                var validString = tempUrl[1].split("//").join("/");;
+                return [tempUrl[0], validString].join(":///");
+            }
+        } 
+        return url.split("//").join("/");
     }
 }
 
