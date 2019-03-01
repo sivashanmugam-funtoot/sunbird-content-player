@@ -245,6 +245,7 @@ module.exports = (env, argv) => {
 			new UglifyJsPlugin({
 				cache: false,
 				parallel: true,
+				test: /\.js($|\?)/i,
 				uglifyOptions: {
 					compress: {
 						dead_code: true,
