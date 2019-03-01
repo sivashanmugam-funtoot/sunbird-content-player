@@ -159,8 +159,6 @@ angular.module('genie-canvas').directive('customNextNavigation', function ($root
     if ($scope.pluginInstance) {
       if (globalConfig.overlay.showOverlay) {
         $scope.customNavigationVisible = $scope.pluginInstance.customNavigationVisible;
-        $scope.customNextVisible = $scope.pluginInstance.customNextVisible;
-        $scope.customPreviousVisible = $scope.pluginInstance.customPreviousVisible;
         $scope.safeApply();
       }
     }
