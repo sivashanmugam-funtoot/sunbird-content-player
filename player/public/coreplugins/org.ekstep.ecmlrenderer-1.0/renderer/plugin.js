@@ -356,7 +356,7 @@ var qspatch = {
                             return EkstepRendererAPI.getBaseURL() + url.substring(1, url.length);
                         } else {
                             // Loading content from mobile storage ( OFFLINE )
-                            return 'file:///' + EkstepRendererAPI.getBaseURL() + url;
+                            return 'http://localhost:3000/' + EkstepRendererAPI.getBaseURL() + url;
                         }
                     }
                 }
